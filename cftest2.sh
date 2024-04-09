@@ -28,7 +28,7 @@ speedtest() {
   # st 测速线程
   # cfiptest -f xxx -st 0
   # cat ali.txt|awk -F ',' '!a[$1]++{print}'
-  cfiptest -f $file -url speed.fatkun.cloudns.ch/50m -mins 4 -maxdc 1000 -maxsc $testc -st 1 -o $TMP_RESULT_PATH
+  ./cfiptest -f $file -url speed.fatkun.cloudns.ch/50m -mins 3.5 -maxdc 1000 -maxsc $testc -st 1 -o $TMP_RESULT_PATH
 
 	cat $TMP_RESULT_PATH >> $RESULT_PATH
 
@@ -75,8 +75,8 @@ upload() {
 }
 
 init
-speedtest './input2/ali.txt' "阿里" 7 4
-speedtest './input2/AS41378.txt' "Kirino" 5 3
-speedtest './input2/ipv6.txt' "IPV6" 5 3
+speedtest './input2/ali.txt' "阿里" 5 5
+speedtest './input2/AS41378.txt' "Kirino" 5 5
+speedtest './input2/ipv6.txt' "IPV6" 5 5
 final_release
 upload
